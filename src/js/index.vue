@@ -2,11 +2,18 @@
   <div class="box">
     {{msg}}
     <Comp></Comp>
+    <!-- <login></login>
+    <home></home> -->
+    <router-link to="/home">home</router-link>
+    <router-link to="/login">login</router-link>
   </div>
 </template>
 
 <script>
-import Comp from '@/components/comp.vue'
+import Comp from '@/js/components/comp.vue'
+
+import login from '@/pages/login/login.vue'
+import home from '@/pages/home/home.vue'
 
 export default {
   data () {
@@ -15,7 +22,12 @@ export default {
     }
   },
   components: {
-    Comp
+    Comp,
+    login,
+    home
+  },
+  mounted(){
+    console.log('app mounted')
   }
 }
 </script>

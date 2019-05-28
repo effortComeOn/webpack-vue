@@ -74,7 +74,7 @@ module.exports = function (env, argv){
     resolve: {
       alias: {
         'vue': 'vue/dist/vue.esm',
-        '@': path.resolve(__dirname, './src/js')
+        '@': path.resolve(__dirname, './src')
       }
     }
   };
