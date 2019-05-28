@@ -6,6 +6,11 @@ import home from '@/pages/home/home.vue'
 
 export default [
   {
+    path: '/login',
+    name: 'login',
+    component: login
+  },
+  {
     path: '/',
     component: App, 
     children: [
@@ -15,10 +20,5 @@ export default [
         component: home
       }
     ]
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: login
   },
 ]

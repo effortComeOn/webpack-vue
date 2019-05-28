@@ -18,5 +18,18 @@ module.exports = {
     }),
     new VueLoaderPlugin()
   ],
-  devtool: 'source-map'
+  devtool: 'source-map',
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true, //target是域名的话，需要这个参数，
+        pathRewrite: {'^/api' : ''},// 路径重写，也就是说会修改最终请求的API路径。
+        // 比如访问的API路径：/api/users, 
+        // 设置pathRewrite: {'^/api' : ''},后，
+        // 最终代理访问的路径：http://www.baidu.com/users， 
+        // 这个参数的目的是给代理命名后，在访问时把命名删除掉。
+      }
+    }
+  }
 }

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { getBanners } from '@/business/api'
 export default {
   data() {
     return {
@@ -13,6 +14,7 @@ export default {
   },
   mounted(){
     console.log('home mounted')
+    getBanners()
   }
 }
 </script>
