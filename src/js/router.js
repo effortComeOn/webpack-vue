@@ -9,6 +9,11 @@ export default [
     path: '/',
     component: App, 
     children: [
+      {
+        path: 'home',
+        name: 'home',
+        component: home
+      }
     ]
   },
   {
@@ -16,9 +21,4 @@ export default [
     name: 'login',
     component: login
   },
-  {
-    path: '/home',
-    name: 'home',
-    component: home
-  }
 ]

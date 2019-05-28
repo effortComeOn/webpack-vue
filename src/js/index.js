@@ -1,12 +1,3 @@
-// import '../css/main.css'
-// import '../less/1.less'
-
-// window.onload=function(){
-//   document.onclick=function(){
-//     alert('aaaa')
-//   }
-// }
-
 import Vue from 'vue' // ?
 
 import routes from './router'
@@ -24,7 +15,7 @@ let vm = new Vue({
     s: 'ssss'
   },
   created: function () {
-    console.log(router)
+    // console.log(router)
   },
   router
 });
