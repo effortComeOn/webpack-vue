@@ -16,6 +16,7 @@
 
 <script>
 import { userLogin } from '@/business/api'
+import mutil from '@/config'
 
 export default {
   data() {
@@ -26,19 +27,27 @@ export default {
     }
   },
   mounted(){
-    console.log('lllllll')
+    let login = this.$store.state.login
+    let user = mutil.getStore('login')
+    if(login || user){
+      this.$router.push('/home')
+    }
   },
   methods: {
     login(){
-      console.log(this.user, this.pass)
       if(this.user && this.pass){
         let data = {
           user: this.user,
           pass: this.pass
         }
-        userLogin(data)
-        console.log("登陆成功")
-        // this.$router.go(-1)
+        userLogin(data).then(res=>{
+          if(res.status == 200){
+            this.$store.commit('RECORD_USERINFO')
+            this.$router.push('/home')            
+          }else{
+            alert('登陆失败')
+          }
+        })
       }
     }
   }
@@ -56,8 +65,9 @@ export default {
   left: 50%;
   .box-card{
     width: 380px;
+    height: 210px;
     margin-left: -50%;
-    margin-top: 100px;
+    margin-top: -50%;
   }
 }
 .login-btn {

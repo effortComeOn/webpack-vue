@@ -1,17 +1,17 @@
 import { queryBanner, login } from "@/service/api"
 
 export function getBanners(){
-  queryBanner().then(res=>{
-    console.log(res)
+  return queryBanner().then(res=>{
+    return res
   }).catch(err=>{
-    console.log(err)
+    return err
   })
 }
 
 export function userLogin(data){
-  login(data).then(res=>{
-    console.log(res)
+  return login(data).then(res=>{
+    return res
   }).catch(err=>{
-    console.log(err)
+    return err
   })
 }

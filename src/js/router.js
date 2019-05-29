@@ -6,12 +6,16 @@ import home from '@/pages/home/home.vue'
 
 export default [
   {
+    path: '/',
+    redirect: '/login'//默认进入是未登录页面
+  },
+  {
     path: '/login',
     name: 'login',
     component: login
   },
   {
-    path: '/',
+    path: '/home',
     component: App, 
     children: [
       {
