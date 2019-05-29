@@ -8,3 +8,11 @@ export function queryBanner () {
     method: 'get'
   })
 }
+
+export function login (data) {
+  return axios({
+    url: '/api/user_login',
+    method: 'post',
+    data: data
+  })
+}

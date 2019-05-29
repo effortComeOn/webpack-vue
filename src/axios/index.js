@@ -11,7 +11,7 @@ var instance = axios.create({
 
 instance.interceptors.request.use(config=> {
   if(config.method != 'get' && 'string' != typeof config.data && config.data){
-    let ContentType = config.haders['Content-Type'];
+    let ContentType = config.headers['Content-Type'];
     if(ContentType == "application/json"){
       config.body = Qs.parse(config.data)
     }else{
@@ -31,7 +31,7 @@ instance.interceptors.response.use(res=>{
   }
   return res.data
 },err=>{
-  return Promise.reject(error);
+  return Promise.reject(err);
 })
 
 export default instance
