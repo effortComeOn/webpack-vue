@@ -8,4 +8,9 @@ export default {
 		state.login = true;
 		mutil.setStore('login', user)
 	},
+
+	LOG_OUT(state, info) {
+		state.login = false;
+		mutil.removeStore('login')
+	},
 }

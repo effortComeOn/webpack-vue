@@ -10,5 +10,12 @@ export default {
   getStore(name) {
     if (!name) return;
     return window.localStorage.getItem(name);
+  },
+
+  removeStore(name) {
+    if(!name) return
+    return window.localStorage.removeItem(name);
   }
+
+
 }

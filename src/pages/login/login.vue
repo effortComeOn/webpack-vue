@@ -58,16 +58,18 @@ export default {
 .context{
   width: 100%;
   min-height: 100vh;
+  position: relative;
 }
-.login-box{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  .box-card{
+.login-box{//loading 的父级
+  width: 100%;
+  height: 100%;
+  .box-card{// loading 元素
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 380px;
     height: 210px;
-    margin-left: -50%;
-    margin-top: -50%;
+    transform: translate(-50%, -50%);
   }
 }
 .login-btn {

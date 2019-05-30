@@ -2,6 +2,7 @@ import App from './index.vue'
 
 import login from '@/pages/login/login.vue'
 import home from '@/pages/home/home.vue'
+import comp from '@/js/components/comp.vue'
 
 
 export default [
@@ -21,8 +22,13 @@ export default [
       {
         path: 'home',
         name: 'home',
-        component: home
+        component: home,
       }
     ]
   },
+  {
+    path: '/comp',
+    name: 'comp',
+    component: comp
+  }
 ]
